@@ -1,0 +1,49 @@
+// font-weight helper:
+
+// 100 Extra Light or Ultra Light;
+// 200 Light or Thin; 300 Book or Demi;
+// 400 Regular or Normal;
+// 500 Medium;
+// 600 Semibold or Demibold;
+// 700 Bold;
+// 800 Black or Extra Bold or Heavy;
+// 900 Extra Black or Fat or Ultra Black
+
+
+/*
+@font-face {
+  font-family: "RobotoBold";
+  src: url("../fonts/Roboto/Roboto-Bold.eot");
+  src: url("../fonts/Roboto/Roboto-Bold.eot?#iefix")format("embedded-opentype"),
+  url("../fonts/Roboto/Roboto-Bold.woff") format("woff"),
+  url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}*/
+
+
+
+@mixin font($f_name, $f-style, $f-weight, $f-url-eot, $f-url-wof, $f-url-ttf){
+  @font-face {
+    font-family: $f_name;
+    src: url($f-url-eot);
+    src: url($f-url-eot + "?#iefix")format("embedded-opentype"),
+    url($f-url-wof) format("woff"),
+    url($f-url-ttf) format("truetype");
+    font-style: $f-style or normal;
+    font-weight: $f-weight or normal;
+  }
+}
+
+
+/*
+//robotoRegular
+@include font(
+  'robotoRegular',
+   normal, normal,
+  "../fonts/Roboto/Roboto-Regular.eot",
+  "../fonts/Roboto/Roboto-Regular.woff",
+  "../fonts/Roboto/Roboto-Regular.ttf"
+  );
+
+*/
